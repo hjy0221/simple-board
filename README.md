@@ -70,3 +70,26 @@ curl -X PATCH http://127.0.0.1:8080/posts/<id> \
 ```sh
 curl -X DELETE http://127.0.0.1:8080/posts/<id>
 ```
+
+---
+
+## English
+
+SimpleBoard is a simple bulletin board example built with Swift and Vapor. The Swift server provides both the posts API and the browser interface.
+
+### Structure
+
+- `Sources/SimpleBoard/main.swift`: Swift/Vapor server and posts API
+- `Public/index.html`: browser interface
+- `Public/styles.css`: interface styles
+- `Public/main.js`: JavaScript UI logic
+
+### Run
+
+Start the server with `swift run SimpleBoard`, then open http://127.0.0.1:8080 in a browser.
+
+The interface lets you list, create, edit, delete, and refresh posts. Posts are stored only in memory and are lost when the server restarts.
+
+### API
+
+The examples above show how to list posts (`GET /posts`), create a post (`POST /posts`), retrieve one (`GET /posts/<id>`), update one (`PATCH /posts/<id>`), and delete one (`DELETE /posts/<id>`).
