@@ -1,5 +1,53 @@
 # SimpleBoard
 
+[日本語](https://github.com/hjy0221/simple-board#%E6%97%A5%E6%9C%AC%E8%AA%9E) · [English](https://github.com/hjy0221/simple-board#english) · [한국어](https://github.com/hjy0221/simple-board#%ED%95%9C%EA%B5%AD%EC%96%B4)
+
+## 日本語
+
+Swift と Vapor によるシンプルな掲示板のサンプルです。サーバーが投稿 API とブラウザー画面を提供します。
+
+### 構成
+
+- `Sources/SimpleBoard/main.swift`: サーバーと投稿 API
+- `Public/index.html`: 画面
+- `Public/styles.css`: スタイル
+- `Public/main.js`: UI ロジック
+
+### 実行
+
+```sh
+swift run SimpleBoard
+```
+
+[http://127.0.0.1:8080](http://127.0.0.1:8080) を開きます。投稿の一覧、作成、編集、削除、更新ができます。データはメモリ内にのみ保存され、サーバーの再起動時に消えます。
+
+### API
+
+`GET /posts`、`POST /posts`、`GET /posts/<id>`、`PATCH /posts/<id>`、`DELETE /posts/<id>` を利用できます。リクエスト例は下の韓国語セクションに掲載しています。
+
+## English
+
+SimpleBoard is a simple bulletin board example built with Swift and Vapor. The Swift server provides both the posts API and the browser interface.
+
+### Structure
+
+- `Sources/SimpleBoard/main.swift`: Swift/Vapor server and posts API
+- `Public/index.html`: browser interface
+- `Public/styles.css`: interface styles
+- `Public/main.js`: JavaScript UI logic
+
+### Run
+
+Start the server with `swift run SimpleBoard`, then open http://127.0.0.1:8080 in a browser.
+
+The interface lets you list, create, edit, delete, and refresh posts. Posts are stored only in memory and are lost when the server restarts.
+
+### API
+
+The examples above show how to list posts (`GET /posts`), create a post (`POST /posts`), retrieve one (`GET /posts/<id>`), update one (`PATCH /posts/<id>`), and delete one (`DELETE /posts/<id>`).
+
+## 한국어
+
 Swift와 Vapor로 만든 간단한 게시판 예제입니다. Swift 서버가 게시글 API와 브라우저 화면을 함께 제공합니다.
 
 ## 구조
@@ -70,26 +118,3 @@ curl -X PATCH http://127.0.0.1:8080/posts/<id> \
 ```sh
 curl -X DELETE http://127.0.0.1:8080/posts/<id>
 ```
-
----
-
-## English
-
-SimpleBoard is a simple bulletin board example built with Swift and Vapor. The Swift server provides both the posts API and the browser interface.
-
-### Structure
-
-- `Sources/SimpleBoard/main.swift`: Swift/Vapor server and posts API
-- `Public/index.html`: browser interface
-- `Public/styles.css`: interface styles
-- `Public/main.js`: JavaScript UI logic
-
-### Run
-
-Start the server with `swift run SimpleBoard`, then open http://127.0.0.1:8080 in a browser.
-
-The interface lets you list, create, edit, delete, and refresh posts. Posts are stored only in memory and are lost when the server restarts.
-
-### API
-
-The examples above show how to list posts (`GET /posts`), create a post (`POST /posts`), retrieve one (`GET /posts/<id>`), update one (`PATCH /posts/<id>`), and delete one (`DELETE /posts/<id>`).
