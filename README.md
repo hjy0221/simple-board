@@ -4,47 +4,149 @@
 
 ## 日本語
 
-Swift と Vapor によるシンプルな掲示板のサンプルです。サーバーが投稿 API とブラウザー画面を提供します。
+SwiftとVaporで作られた簡単な掲示板の例です。 Swiftサーバーは投稿APIとブラウザ画面を提供します。
 
-### 構成
+## 構造
 
-- `Sources/SimpleBoard/main.swift`: サーバーと投稿 API
-- `Public/index.html`: 画面
-- `Public/styles.css`: スタイル
-- `Public/main.js`: UI ロジック
+```text
+Sources/SimpleBoard/main.swift  Swift/Vapor 서버와 게시글 API
+Public/index.html              브라우저 화면
+Public/styles.css              화면 스타일
+Public/main.js                 JavaScript UI 로직
+```
 
-### 実行
+## 実行
+
+Swiftサーバーを実行します。
 
 ```sh
 swift run SimpleBoard
 ```
 
-[http://127.0.0.1:8080](http://127.0.0.1:8080) を開きます。投稿の一覧、作成、編集、削除、更新ができます。データはメモリ内にのみ保存され、サーバーの再起動時に消えます。
+サーバーが実行されると、ブラウザは下のアドレスを開きます。
 
-### API
+```text
+http://127.0.0.1:8080
+```
 
-`GET /posts`、`POST /posts`、`GET /posts/<id>`、`PATCH /posts/<id>`、`DELETE /posts/<id>` を利用できます。リクエスト例は下の韓国語セクションに掲載しています。
+## 画面機能
+
+- 投稿リストを見る
+- 投稿を書く
+- 投稿を編集
+- 投稿を削除
+- リフレッシュ
+
+現在の投稿はメモリにのみ保存されます。サーバーを再起動すると、作成した投稿は消えます。
+
+## API
+
+### 投稿リスト
+
+```sh
+curl http://127.0.0.1:8080/posts
+```
+
+### 投稿の作成
+
+```sh
+curl -X POST http://127.0.0.1:8080/posts \
+  -H 'Content-Type: application/json' \
+  -d '{"title":"첫 글","body":"Swift 서버에서 작성한 게시글입니다."}'
+```
+
+### 投稿の閲覧
+
+```sh
+curl http://127.0.0.1:8080/posts/<id>
+```
+
+### 投稿の編集
+
+```sh
+curl -X PATCH http://127.0.0.1:8080/posts/<id> \
+  -H 'Content-Type: application/json' \
+  -d '{"title":"수정한 제목"}'
+```
+
+### 投稿を削除
+
+```sh
+curl -X DELETE http://127.0.0.1:8080/posts/<id>
+```
 
 ## English
 
-SimpleBoard is a simple bulletin board example built with Swift and Vapor. The Swift server provides both the posts API and the browser interface.
+This is a simple bulletin board example created with Swift and Vapor. The Swift server provides both the post API and the browser screen.
 
-### Structure
+## Structure
 
-- `Sources/SimpleBoard/main.swift`: Swift/Vapor server and posts API
-- `Public/index.html`: browser interface
-- `Public/styles.css`: interface styles
-- `Public/main.js`: JavaScript UI logic
+```text
+Sources/SimpleBoard/main.swift  Swift/Vapor 서버와 게시글 API
+Public/index.html              브라우저 화면
+Public/styles.css              화면 스타일
+Public/main.js                 JavaScript UI 로직
+```
 
-### Run
+## run
 
-Start the server with `swift run SimpleBoard`, then open http://127.0.0.1:8080 in a browser.
+Run Swift server.
 
-The interface lets you list, create, edit, delete, and refresh posts. Posts are stored only in memory and are lost when the server restarts.
+```sh
+swift run SimpleBoard
+```
 
-### API
+Once the server is running, open the address below in your browser.
 
-The examples above show how to list posts (`GET /posts`), create a post (`POST /posts`), retrieve one (`GET /posts/<id>`), update one (`PATCH /posts/<id>`), and delete one (`DELETE /posts/<id>`).
+```text
+http://127.0.0.1:8080
+```
+
+## Screen functions
+
+- View list of posts
+- Write a post
+- Edit post
+- Delete post
+- Refresh
+
+Current posts are only stored in memory. If you restart the server, your posts will disappear.
+
+## API
+
+### Post list
+
+```sh
+curl http://127.0.0.1:8080/posts
+```
+
+### Create a post
+
+```sh
+curl -X POST http://127.0.0.1:8080/posts \
+  -H 'Content-Type: application/json' \
+  -d '{"title":"첫 글","body":"Swift 서버에서 작성한 게시글입니다."}'
+```
+
+### View posts
+
+```sh
+curl http://127.0.0.1:8080/posts/<id>
+```
+
+### Edit post
+
+```sh
+curl -X PATCH http://127.0.0.1:8080/posts/<id> \
+  -H 'Content-Type: application/json' \
+  -d '{"title":"수정한 제목"}'
+```
+
+### Delete post
+
+```sh
+curl -X DELETE http://127.0.0.1:8080/posts/<id>
+```
 
 ## 한국어
 
