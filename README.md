@@ -4,8 +4,6 @@
 
 ## 日本語
 
-[日本語](https://github.com/hjy0221/simple-board#%E6%97%A5%E6%9C%AC%E8%AA%9E) · [English](https://github.com/hjy0221/simple-board#english) · [한국어](https://github.com/hjy0221/simple-board#%ED%95%9C%EA%B5%AD%EC%96%B4)
-
 SwiftとVaporで作られた簡単な掲示板の例です。 Swiftサーバーは投稿APIとブラウザ画面を提供します。
 
 ## 構造
@@ -79,8 +77,6 @@ curl -X DELETE http://127.0.0.1:8080/posts/<id>
 
 ## English
 
-[日本語](https://github.com/hjy0221/simple-board#%E6%97%A5%E6%9C%AC%E8%AA%9E) · [English](https://github.com/hjy0221/simple-board#english) · [한국어](https://github.com/hjy0221/simple-board#%ED%95%9C%EA%B5%AD%EC%96%B4)
-
 This is a simple bulletin board example created with Swift and Vapor. The Swift server provides both the post API and the browser screen.
 
 ## Structure
@@ -153,8 +149,6 @@ curl -X DELETE http://127.0.0.1:8080/posts/<id>
 ```
 
 ## 한국어
-
-[日本語](https://github.com/hjy0221/simple-board#%E6%97%A5%E6%9C%AC%E8%AA%9E) · [English](https://github.com/hjy0221/simple-board#english) · [한국어](https://github.com/hjy0221/simple-board#%ED%95%9C%EA%B5%AD%EC%96%B4)
 
 Swift와 Vapor로 만든 간단한 게시판 예제입니다. Swift 서버가 게시글 API와 브라우저 화면을 함께 제공합니다.
 
